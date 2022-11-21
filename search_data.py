@@ -10,3 +10,11 @@ def search_data(word, data):
                 return item
     else:
         return None
+
+def search_val(word, data, column):
+    if len(data) > 0:
+        for item in data:
+            if item != []  and item[int(column)] == word:
+                return item
+    else:
+        return None
