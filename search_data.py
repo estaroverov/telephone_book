@@ -1,20 +1,25 @@
 # модуль поиска контакта
 
-from export_data import export_data
-from print_data import print_data
-
 def search_data(word, data):
+    if data == None:
+        return None
+    found = []
     if len(data) > 0:
         for item in data:
             if word in item:
-                return item
+                found.append(item)
+        return found
     else:
         return None
 
 def search_val(word, data, column):
+    if data == None:
+        return None
+    found = []
     if len(data) > 0:
         for item in data:
-            if item != []  and item[int(column)] == word:
-                return item
+            if item != []  and item[int(column)-1] == word:
+                found.append(item)
+        return found
     else:
         return None
